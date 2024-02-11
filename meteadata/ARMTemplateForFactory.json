@@ -18,6 +18,14 @@
 		"tumblingtrigger_properties_pipeline_parameters_endtime": {
 			"type": "string",
 			"defaultValue": "@trigger().outputs.windowEndTime"
+		},
+		"trigger1_properties_tumblingwindowfiles_parameters_starttime": {
+			"type": "string",
+			"defaultValue": "@trigger().outputs.windowStartTime"
+		},
+		"trigger1_properties_tumblingwindowfiles_parameters_endtime": {
+			"type": "string",
+			"defaultValue": "@trigger().outputs.windowEndTime"
 		}
 	},
 	"variables": {
@@ -217,6 +225,39 @@
 						"intervalInSeconds": 30
 					},
 					"dependsOn": []
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/tumblingwindowfiles')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "tumblingwindowfiles",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"starttime": "[parameters('trigger1_properties_tumblingwindowfiles_parameters_starttime')]",
+							"endtime": "[parameters('trigger1_properties_tumblingwindowfiles_parameters_endtime')]"
+						}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 5,
+						"startTime": "2024-02-12T22:50:00",
+						"timeZone": "India Standard Time"
+					}
 				}
 			},
 			"dependsOn": [

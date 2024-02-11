@@ -14,6 +14,12 @@
 		"tumblingtrigger_properties_pipeline_parameters_endtime": {
 			"value": "@trigger().outputs.windowEndTime"
 		},
+		"trigger1_properties_tumblingwindowfiles_parameters_starttime": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"trigger1_properties_tumblingwindowfiles_parameters_endtime": {
+			"value": "@trigger().outputs.windowEndTime"
+		},
 		"containerUri": {
 			"value": ""
 		},
