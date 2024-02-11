@@ -20,7 +20,6 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "input",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -60,6 +59,14 @@
 				]
 			}
 		],
+		"parameters": {
+			"starttime": {
+				"type": "string"
+			},
+			"endtime": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
