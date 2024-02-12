@@ -1,0 +1,9 @@
+{
+	"name": "datafacsat",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "66de9360-0983-46d6-8a64-8fa74f302e96",
+		"tenantId": "de08c407-19b9-427d-9fe8-edf254300ca7"
+	}
+}
