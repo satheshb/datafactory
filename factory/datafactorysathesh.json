@@ -1,0 +1,9 @@
+{
+	"name": "datafactorysathesh",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c1744405-c6f9-4780-af00-f592e7c6534c",
+		"tenantId": "de08c407-19b9-427d-9fe8-edf254300ca7"
+	}
+}
