@@ -1,0 +1,83 @@
+{
+	"name": "executepipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "csvtoservervariable",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"input": {
+							"value": "@pipeline().parameters.input",
+							"type": "Expression"
+						},
+						"ouput": {
+							"value": "@pipeline().parameters.output",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Delete1",
+				"type": "Delete",
+				"dependsOn": [
+					{
+						"activity": "Execute Pipeline1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "Binary3",
+						"type": "DatasetReference",
+						"parameters": {
+							"delete": {
+								"value": "@pipeline().parameters.deletefile",
+								"type": "Expression"
+							}
+						}
+					},
+					"enableLogging": false,
+					"storeSettings": {
+						"type": "AzureBlobStorageReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					}
+				}
+			}
+		],
+		"parameters": {
+			"input": {
+				"type": "string"
+			},
+			"output": {
+				"type": "string"
+			},
+			"deletefile": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
