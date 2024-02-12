@@ -1,0 +1,9 @@
+{
+	"name": "dp300db",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c4885ea7-e0fd-4177-8ec6-d42cf8ea8943",
+		"tenantId": "de08c407-19b9-427d-9fe8-edf254300ca7"
+	}
+}
