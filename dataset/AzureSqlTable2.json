@@ -2,28 +2,30 @@
 	"name": "AzureSqlTable2",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabase1",
+			"referenceName": "AzureSqlDatabase2",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tabelname": {
+				"type": "string"
+			},
+			"schemaname": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [
-			{
-				"name": "id",
-				"type": "varchar"
-			},
-			{
-				"name": "First_name",
-				"type": "varchar"
-			},
-			{
-				"name": "last_name",
-				"type": "varchar"
-			}
-		],
+		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "mock"
+			"schema": {
+				"value": "@dataset().tabelname",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().schemaname",
+				"type": "Expression"
+			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }
