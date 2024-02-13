@@ -2,7 +2,7 @@
 	"name": "DelimitedText3",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage3",
+			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "MOCK_DATA (4).csv",
+				"fileName": "test.csv",
 				"container": "input"
 			},
 			"columnDelimiter": ",",
@@ -22,15 +22,8 @@
 			{
 				"name": "id",
 				"type": "String"
-			},
-			{
-				"name": "first_name",
-				"type": "String"
-			},
-			{
-				"name": "last_name",
-				"type": "String"
 			}
 		]
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }
