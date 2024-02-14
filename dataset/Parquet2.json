@@ -1,12 +1,12 @@
 {
-	"name": "Parquet1",
+	"name": "Parquet2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"outpath": {
+			"out1": {
 				"type": "string"
 			}
 		},
@@ -14,7 +14,12 @@
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation"
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@dataset().out1",
+					"type": "Expression"
+				},
+				"container": "out1"
 			},
 			"compressionCodec": "snappy"
 		},
