@@ -10,8 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "mock.csv",
-				"container": "input"
+				"container": "test"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -29,6 +28,18 @@
 			},
 			{
 				"name": "last_name",
+				"type": "String"
+			},
+			{
+				"name": "gender",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "salary",
 				"type": "String"
 			}
 		]

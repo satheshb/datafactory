@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "test.csv",
-				"container": "input"
+				"fileName": "new.csv",
+				"container": "test"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -21,6 +21,26 @@
 		"schema": [
 			{
 				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "first_name",
+				"type": "String"
+			},
+			{
+				"name": "last_name",
+				"type": "String"
+			},
+			{
+				"name": "gender",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "salary",
 				"type": "String"
 			}
 		]
