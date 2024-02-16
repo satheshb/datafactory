@@ -2,15 +2,16 @@
 	"name": "DelimitedText4",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage3",
+			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"container": "input"
+				"type": "AzureBlobFSLocation",
+				"fileName": "cases_deaths.csv",
+				"fileSystem": "output1"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -19,17 +20,42 @@
 		},
 		"schema": [
 			{
-				"name": "id",
+				"name": "country",
 				"type": "String"
 			},
 			{
-				"name": "first_name",
+				"name": "country_code",
 				"type": "String"
 			},
 			{
-				"name": "last_name",
+				"name": "continent",
+				"type": "String"
+			},
+			{
+				"name": "population",
+				"type": "String"
+			},
+			{
+				"name": "indicator",
+				"type": "String"
+			},
+			{
+				"name": "daily_count",
+				"type": "String"
+			},
+			{
+				"name": "date",
+				"type": "String"
+			},
+			{
+				"name": "rate_14_day",
+				"type": "String"
+			},
+			{
+				"name": "source",
 				"type": "String"
 			}
 		]
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

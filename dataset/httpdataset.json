@@ -1,8 +1,8 @@
 {
-	"name": "DelimitedText5",
+	"name": "httpdataset",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "HttpServer2",
+			"referenceName": "HttpServer1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,12 +10,13 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "cloudboxacademy/covid19/main/ecdc_data/cases_deaths.csv"
+				"relativeUrl": "/tahsiniqbal98/Covid-19-Data-Analysis-Azure-Data-Factory/blob/b0361ea91beadb3a7a4782c7b540d24cd650fff0/raw_files/ecdc/cases_deaths/cases_deaths.csv"
 			},
 			"columnDelimiter": ",",
+			"rowDelimiter": "\n",
 			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			"firstRowAsHeader": false,
+			"quoteChar": null
 		},
 		"schema": []
 	},

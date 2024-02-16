@@ -2,7 +2,7 @@
 	"name": "DelimitedText2",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage1",
+			"referenceName": "AzureBlobStorage2",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,9 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "test"
+				"fileName": "cases_deaths.csv",
+				"folderPath": "out",
+				"container": "output1"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -19,27 +21,39 @@
 		},
 		"schema": [
 			{
-				"name": "id",
+				"name": "country",
 				"type": "String"
 			},
 			{
-				"name": "first_name",
+				"name": "country_code",
 				"type": "String"
 			},
 			{
-				"name": "last_name",
+				"name": "continent",
 				"type": "String"
 			},
 			{
-				"name": "gender",
+				"name": "population",
 				"type": "String"
 			},
 			{
-				"name": "City",
+				"name": "indicator",
 				"type": "String"
 			},
 			{
-				"name": "salary",
+				"name": "daily_count",
+				"type": "String"
+			},
+			{
+				"name": "date",
+				"type": "String"
+			},
+			{
+				"name": "rate_14_day",
+				"type": "String"
+			},
+			{
+				"name": "source",
 				"type": "String"
 			}
 		]
